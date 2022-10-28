@@ -13,7 +13,7 @@ public class MyContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ServletContext context = sce.getServletContext();
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("54.202.95.206");
+        connectionFactory.setHost("44.228.237.106");
         connectionFactory.setPort(5672);
         connectionFactory.setPassword("971128");
         connectionFactory.setUsername("username");

@@ -128,8 +128,9 @@ public class SkierServlet extends HttpServlet {
             try {
                 Channel channel = channelPool.borrowObject();
                 channel.queueDeclare("mainQueue",false, false, false, null);
+                String message = gson.toJson(skiRequest);
 
-                channel.basicPublish("","mainQueue",null,record.getBytes());
+                channel.basicPublish("","mainQueue",null,message.getBytes());
                 channelPool.returnObject(channel);
                 response.setStatus(HttpServletResponse.SC_CREATED);
             } catch (IOException e) {

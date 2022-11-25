@@ -13,11 +13,10 @@ public class MyContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ServletContext context = sce.getServletContext();
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("44.228.237.106");
+        connectionFactory.setHost("35.166.230.31");
         connectionFactory.setPort(5672);
-        connectionFactory.setPassword("971128");
-        connectionFactory.setUsername("username");
-        connectionFactory.setVirtualHost("roy");
+        connectionFactory.setPassword("admin");
+        connectionFactory.setUsername("admin");
         try {
             Connection connection = connectionFactory.newConnection();
             RMQChannelFactory rmqChannelFactory = new RMQChannelFactory(connection);
